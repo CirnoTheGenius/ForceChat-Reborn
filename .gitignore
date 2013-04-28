@@ -4,3 +4,15 @@
 *.jar
 *.war
 *.ear
+
+# Bin path #
+/bin
+
+# Eclipse #
+.classpath
+.project
+.settings
+
+# GitHub stuff #
+.gitignore
+/bin
