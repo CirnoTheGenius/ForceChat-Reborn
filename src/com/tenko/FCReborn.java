@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.tenko.cmdexe.CommanderCirno;
 import com.tenko.listeners.FCListener;
 
 public class FCReborn extends JavaPlugin {
@@ -13,11 +14,16 @@ public class FCReborn extends JavaPlugin {
 	private Map<String, String> chatters = new HashMap<String, String>();	
 	private final FCListener fc = new FCListener();
 	private static FCReborn thePlugin;
+	private final CommanderCirno cc = new CommanderCirno();
 	
 	@Override
 	public void onEnable(){
-		thePlugin = this;
 		getServer().getPluginManager().registerEvents(this.fc, this);
+		getCommand("attach").setExecutor(this.cc);
+		getCommand("detach").setExecutor(this.cc);
+		getCommand("exe").setExecutor(this.cc);
+		
+		thePlugin = this;
 	}
 	
 	

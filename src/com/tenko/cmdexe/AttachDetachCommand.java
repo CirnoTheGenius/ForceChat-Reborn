@@ -8,7 +8,7 @@ import com.tenko.FCReborn;
 
 public class AttachDetachCommand {
 
-	public AttachDetachCommand(String cmd, String[] args, CommandSender cs){
+	public AttachDetachCommand(String cmd, CommandSender cs, String[] args){
 		if(cmd.equalsIgnoreCase("attach")){
 			ExecuteAttach(cs, args);
 		} else if(cmd.equalsIgnoreCase("detach")){
@@ -40,7 +40,7 @@ public class AttachDetachCommand {
 					return;
 				}
 				plugin.getChatters().put(cs.getName(), Bukkit.getServer().getPlayer(args[0]).getName());	
-				cs.sendMessage(ChatColor.RED + "[FCReborn] Successfully attached to " + plyr);
+				cs.sendMessage(ChatColor.GREEN + "[FCReborn] Successfully attached to " + plyr);
 			} else {
 				cs.sendMessage(ChatColor.RED + "[FCReborn] That player is offline!");
 			}
@@ -56,7 +56,7 @@ public class AttachDetachCommand {
 	 */
 	public void ExecuteDetach(CommandSender cs, String[] args){
 		if(FCReborn.getPlugin().getChatters().containsKey(cs.getName())){
-			cs.sendMessage(ChatColor.RED + "[FCReborn] Detached from " + FCReborn.getPlugin().getChatters().remove(cs.getName()));
+			cs.sendMessage(ChatColor.GREEN + "[FCReborn] Detached from " + FCReborn.getPlugin().getChatters().remove(cs.getName()));
 		} else {
 			cs.sendMessage(ChatColor.RED + "[FCReborn] You weren't attached to anyone to begin with!");
 		}
