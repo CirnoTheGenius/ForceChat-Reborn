@@ -1,4 +1,4 @@
-ForceChat-Rebron
+ForceChat-Reborn
 ================
 
-ForceChat Rebron: The sequal to ForceChat!
+ForceChat Reborn: The sequal to ForceChat!
