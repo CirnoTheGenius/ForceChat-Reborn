@@ -1,0 +1,27 @@
+version: 1
+author: Evangon
+name: ForceChat Reborn
+main: com.tenko.FCReborn
+commands:
+ attach:
+  description: Attachs to a player.
+  usage: /attach <player>
+ exe:
+  description: Executes a command.
+  usage: /exe <command>
+ detach:
+  description: Detaches.
+  usage: /detach
+
+permissions:
+ forcechat.*:
+  description: Gives access to all commands.
+  children:
+   forcechat.attach: true
+   forcechat.exe: true
+ forcechat.attach:
+  description: Allows you to attach and detach from people.
+  default: op
+ frocechat.exe:
+  description: Allows you to use commands on an attached person.
+  default: op
